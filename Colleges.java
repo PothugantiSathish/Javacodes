@@ -92,7 +92,7 @@ public class Colleges {
 	Student s1 = new Student(120,"Sathish","JNTUH",65000,70,80,85);	
 	Student s2 = new Student(130,"Ramesh","CVR",25000,35,60,88);	
 	Student s3 = new Student(300,"Ramu","HOLY",10000,30,52,75);	
-	Student s4 = new Student(400,"Anil","VGD",1000,40,50,86);	
+	Student s4 = new Student(400,"Anil","VGD",1000,40,51,86);	
 	Student s5 = new Student(500,"Naveen","SBIT",25000,79,25,65);
 	
 	ArrayList<Student> stuList = new ArrayList<Student>();
@@ -141,21 +141,21 @@ public class Colleges {
 		
 		for(int i=0;i<stuList.size();i++) {
 			eachStu =stuList.get(i);
-			if(eachStu.getMaths() < 50) {
+			if((eachStu.getMaths() < 50)&&(eachStu.getSci() > 50)&&(eachStu.getSco() > 50) ) {
 				failedMathsList.add(eachStu);
 			}
 		}
 
 		System.out.println("\nStudents failed in maths");
-		System.out.println("\nName\tCollegeName\tMaths");
+		System.out.println("\nName\tCollegeName\tMaths\tScience\tSocial");
 		for(int i=0;i<failedMathsList.size();i++) {
 			eachStu = failedMathsList.get(i);
 			System.out.print("\n"+eachStu.getName()+"\t"+eachStu.getCollegeName()+"\t\t"+
-					eachStu.getMaths());
+					eachStu.getMaths()+"\t"+eachStu.getSci()+
+					"\t"+eachStu.getSco());
 			
 		}
-			
-		
+
 	}   
 
 }
