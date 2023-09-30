@@ -78,6 +78,11 @@ class Student{
 	public void setSci(int sci) {
 		this.sci = sci;
 	}
+
+	public boolean failedMaths() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
 
@@ -132,7 +137,24 @@ public class Colleges {
 					"\t"+eachStu.getSco());
 				
 		}
+		ArrayList<Student> failedMathsList=new ArrayList<Student>();
 		
+		for(int i=0;i<stuList.size();i++) {
+			eachStu =stuList.get(i);
+			if(eachStu.getMaths() < 50) {
+				failedMathsList.add(eachStu);
+			}
+		}
+
+		System.out.println("\nStudents failed in maths");
+		System.out.println("\nName\tCollegeName\tMaths");
+		for(int i=0;i<failedMathsList.size();i++) {
+			eachStu = failedMathsList.get(i);
+			System.out.print("\n"+eachStu.getName()+"\t"+eachStu.getCollegeName()+"\t\t"+
+					eachStu.getMaths());
+			
+		}
+			
 		
 	}   
 
