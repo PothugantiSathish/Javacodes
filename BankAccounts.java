@@ -17,11 +17,11 @@ interface Bank{
 	void checkBalance();
 }
 
-class SBIBank implements Bank{
+class SBHBank implements Bank{
 	int accno;
 	String name;
 	int balance;
-	public SBIBank(int accno, String name, int balance) {
+	public SBHBank(int accno, String name, int balance) {
 		super();
 		this.accno = accno;
 		this.name = name;
@@ -30,28 +30,28 @@ class SBIBank implements Bank{
 	@Override
 	public void deposit(int amt) {
 		if(amt > 20000) {
-			System.out.println("From SBIBank:::Daily u canot deposit >"+amt);
+			System.out.println("From SBHBank:::Daily u canot deposit >"+amt);
 					
 		}
 		else {
 			this.balance = this.balance + amt;
-			System.out.println("From SBIBank:::Successfully deposited  amount..."+amt);
+			System.out.println("From SBHBank:::Successfully deposited  amount..."+amt);
 		}
 	}
 	@Override
 	public void withDraw(int amt) {
 		if(amt > 20000) {
-			System.out.println("From SBIBank:::Daily u canot withdraw >"+amt);
+			System.out.println("From SBHBank:::Daily u canot withdraw >"+amt);
 					
 		}
 		else {
 			this.balance = this.balance - amt;
-			System.out.println("From SBIBank:::Successfully withDrawn  amount..."+amt);
+			System.out.println("From SBHBank:::Successfully withDrawn  amount..."+amt);
 		}
 	}
 	@Override
 	public void checkBalance() {
-		System.out.println("From SBIBank:::Available Balance---->"+this.balance);
+		System.out.println("From SBHBank:::Available Balance---->"+this.balance);
 			
 	}
 	
@@ -59,11 +59,11 @@ class SBIBank implements Bank{
 
 
 
-class AxisBank implements Bank{
+class HDFCBank implements Bank{
 	int accno;
 	String name;
 	int balance;
-	public AxisBank(int accno, String name, int balance) {
+	public HDFCBank(int accno, String name, int balance) {
 		super();
 		this.accno = accno;
 		this.name = name;
@@ -72,17 +72,17 @@ class AxisBank implements Bank{
 	@Override
 	public void deposit(int amt) {
 		this.balance = this.balance + amt;
-		System.out.println("From AxisBank:::Successfully deposited  amount..."+amt);
+		System.out.println("From HDFCBank:::Successfully deposited  amount..."+amt);
 	}
 	@Override
 	public void withDraw(int amt) {
 		this.balance = this.balance - amt;
-		System.out.println("From AxisBank::::Successfully withdrawn  amount..."+amt);
+		System.out.println("From HDFCBank::::Successfully withdrawn  amount..."+amt);
 		
 	}
 	@Override
 	public void checkBalance() {
-		System.out.println("From AxisBank::::Available Balance---->"+this.balance);
+		System.out.println("From HDFCBank::::Available Balance---->"+this.balance);
 			
 	}
 	
@@ -93,7 +93,7 @@ public class BankAccounts {
 	public static void main(String[] args) {
 		Bank bank;
 
-		bank = new SBIBank(14537,"Sathish",7000);
+		bank = new SBHBank(14537,"Sathish",7000);
 		
 		bank.checkBalance();
 		bank.deposit(2000);
@@ -102,7 +102,7 @@ public class BankAccounts {
 		bank.deposit(152000);
 		bank.checkBalance();
 		
-		bank = new AxisBank(12345,"Raju",20000);
+		bank = new HDFCBank(12345,"Raju",20000);
 		
 		bank.checkBalance();
 		bank.deposit(20000);
