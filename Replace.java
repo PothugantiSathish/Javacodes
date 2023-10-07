@@ -17,18 +17,18 @@ public class Replace {
 				String updatedData = "";
 				for(int i=0;i<lines.length;i++) {//
 					lines[i] = lines[i].trim();
-					words = lines[i].split(" ");//"welcome to india" 
+					words = lines[i].split(" ");//"i am from hyderabad." 
 					newLine="";
 					for(int j=0;j<words.length;j++) {
-						if( (j==0) && (words[j].length() > 0) ) {//"welcome"
-							firstChar=words[j].charAt(0);//w
-							firstChar = toUpperChar(firstChar);// W
-							words[j] = firstChar + words[j].substring(1);// W+elcome--- Welcome
+						if( (j==0) && (words[j].length() > 0) ) {//"i"
+							firstChar=words[j].charAt(0);//i
+							firstChar = toUpperChar(firstChar);// i
+							words[j] = firstChar + words[j].substring(1);
 						}
 						else if( words[j].length() > 0 ){
-							firstChar=words[j].charAt(0);//w
-							firstChar = toLowerChar(firstChar);// W
-							words[j] = firstChar + words[j].substring(1);// W+elcome--- Welcome
+							firstChar=words[j].charAt(0);
+							firstChar = toLowerChar(firstChar);
+							words[j] = firstChar + words[j].substring(1);
 							
 						}
 						if(( words[j].length() > 0 ) &&(words[j].equalsIgnoreCase("hyderabad")) ) {
