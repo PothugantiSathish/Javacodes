@@ -6,9 +6,10 @@ public class UpperLower {
 		
 				// A-Z-- 65-90
 				// a-z---97-122
-				String data = "hii everyone."
-						+ " lets start the class."
-						+ "good morning";
+				String data = "welcome to india.  i Love My india."
+						+ "  india is very Beautiful culture  country."
+						+ "I am Living In hyderabad";
+				
 				data = data.replace('.', ':');
 				String[] lines = data.split(":");
 				String[] words;
@@ -30,6 +31,7 @@ public class UpperLower {
 							words[j] = firstChar + words[j].substring(1);// W+elcome--- Welcome
 							
 						}
+						
 						newLine = newLine+" "+words[j];
 					}// for every line
 					System.out.println(newLine);
@@ -64,6 +66,7 @@ public class UpperLower {
 					res = (char)(ch + 32);
 				} 
 				return res;
+				
 			}
 			
 			}
